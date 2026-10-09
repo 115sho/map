@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喜当爹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #ffd6e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .box {
+            text-align: center;
+        }
+        .cat {
+            width: 180px;
+            margin-bottom: 24px;
+        }
+        .question {
+            font-size: 32px;
+            color: #442233;
+            margin-bottom: 48px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+        button {
+            width: 140px;
+            height: 60px;
+            border: none;
+            border-radius: 12px;
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes {
+            background-color: #f284a1;
+            color: white;
+        }
+        #no {
+            background-color: #88a8e8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img class="cat" alt="小猫" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ffe6ef' stroke='%23f2acc0' stroke-width='2' /><path d='M30 42 Q38 32 50 38 Q62 32 70 42' fill='%23f2acc0' /><circle cx='36' cy='52' r='4' fill='%23333333' /><circle cx='64' cy='52' r='4' fill='%23333333' /><ellipse cx='50' cy='64' rx='6' ry='4' fill='%23f284a1' /><path d='M44 70 Q50 76 56 70' stroke='%23442233' stroke-width='2' fill='none' /></svg>">
+        <p class="question">可以当我儿子吗？</p>
+        <div class="btn-group">
+            <button id="yes">可以</button>
+            <button id="no">不要</button>
+        </div>
+    </div>
+    <script>
+        const yesBtn = document.getElementById('yes');
+        const noBtn = document.getElementById('no');
+        let scale = 1;
+        noBtn.onclick = function () {
+            scale += 0.4;
+            yesBtn.style.transform = `scale(${scale})`;
+        }
+        yesBtn.onclick = function () {
+            alert('太好了！🥰快叫爹吧！');
+            document.body.innerHTML = `<div style="text-align:center;color:#442233;font-size:40px;">❤️ 有儿子啦 ❤️</div>`;
+        }
+    </script>
+</body>
+</html>
